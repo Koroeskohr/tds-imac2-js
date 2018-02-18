@@ -25,20 +25,22 @@
   "parser": "babel-eslint",
 
   "plugins": [
-    
+    "fp"
   ],
 
   "rules": {
-    "camelcase": "warn",
+    "camelcase": "off",
     "no-const-assign": "warn",
-    "no-this-before-super": "warn",
     "no-undef": "warn",
     "no-unreachable": "warn",
     "no-unused-vars": "warn",
-    "constructor-super": "warn",
+    "no-trailing-spaces": "warn",
+    "eol-last": "warn",
+    "quotes": "warn",
     "valid-typeof": "warn",
-    "comma-dangle": ["warn", "always-multiline"]
+    "fp/no-unused-expression": "off",
+    "fp/no-nil": "off"
   },
 
-  "extends": ["standard"]
+  "extends": ["standard", "plugin:fp/recommended"]
 }
