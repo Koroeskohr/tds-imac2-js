@@ -107,11 +107,11 @@ test('exercice 7.5', () => {
 
 test('exercice 7.6', () => {
   expect(specificHen).to.be.a('function')
-  expect(specificHen(hens).to.deep.eq({
+  expect(specificHen(hens)).to.deep.eq({
     'name': 'Roberte',
     'species': 'hen',
     'legs': 2,
     'age': 16,
     'furColor': 'red'
-  }))
+  })
 })
