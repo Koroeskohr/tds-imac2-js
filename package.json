@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "test": "mocha --require babel-register --colors ./test/*.test.js",
-    "test:watch": "mocha --require babel-register --colors -w ./test/*.test.js"
+    "test": "mocha -b --require babel-register --colors ./test/*.test.js",
+    "test:watch": "mocha -b --require babel-register --colors -w ./test/*.test.js"
   },
   "repository": {
     "type": "git",
