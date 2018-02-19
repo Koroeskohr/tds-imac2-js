@@ -1,4 +1,4 @@
-// const, let
+import hens from './hens.js'
 
 /**
  * Exercice 1
@@ -93,3 +93,71 @@ export const sig4 = (fullName) => `${fullName}, First of Her Name, the Unburnt, 
 
 export const generateArticleWithSignature = () => {} // TODO
 export const finalArticle = generateArticleWithSignature(/* ... */) // TODO
+
+/**
+ * Exercice 7
+ * La prog ça vous a saoulé du coup vous êtes partis gérer un zoo dans le Vercors, en emmenant qq ESIPE pour commencer.
+ * Vous avez besoin de gérer votre cheptel, pour ça il va falloir coder un peu plus. (dézoo pas dézoo)
+ *
+ * Voilà le format d'un animal :
+ * {
+ *   name: 'Lénine',
+ *   species: 'bear',
+ *   legs: 4,
+ *   age: 16,
+ *   furColor: 'red'
+ * }
+ *
+ * Créons une petite fonction pour les générer facilement sans se tromper !
+ * C'est une bonne pratique, on est ainsi certain que notre interface est respectée.
+ */
+
+export const genAnimal = (name, species, legs, age, furColor) => ({
+  name, species, legs, age, furColor
+})
+
+// Crée donc l'animal de ton choix :
+export const sampleAnimal = genAnimal(/* ... */)
+
+// Ton animal souhaite changer de couleur de fourrure, comment répercutes-tu la modif sur ton object ?
+
+// 7.1
+// Tu reçois ta commande de 8 poules pour aller avec tes ESIPE, et ça te saoule d'appeler genAnimal
+// en écrivant 'hen' (poule en anglais) à chaque fois pour l'espèce.
+// Tu ne réécriras PAS de code créant un object.
+
+export const generateHen = () => {} // TODO
+
+// 7.2
+// Les poules sont arrivées, on souhaiterait pouvoir avoir un inventaire précis de l'état de nos bêtes.
+// Pour cela, il faut déterminer des chiffres clés pour établir un tableau de bord.
+
+// On souhaite écrire la fonction qui prend les poules en entrée et renvoie un objet constitué du nom de la poule
+// et de son âge. On utilisera Array.map
+
+export const hensOnlyNameAndAge = (hens) => {} // TODO
+
+// 7.3
+// On souhaite savoir si nos poules sont bien portantes et ne souffrent pas de mutations génétiques affectant leurs pattes.
+// Ecrire la fonction qui prend les poules en entrée et renvoie les noms des poules affectées.
+
+export const mutatedHens = (hens) => {} // TODO
+
+// 7.4
+// On souhaite connaitre la moyenne d'âge de notre basse-cour.
+// Ecrire la fonction qui prend les poules et renvoie cette moyenne. On utilisera Array.reduce.
+
+export const averageAgeForHens = (hens) => {} // TODO
+
+// 7.5
+// Pour des questions d'organisation et de simplicité de la gestion, on vous demande de ne garder que les poules possédant
+// des noms de 7 lettres maximum
+// Ecrire la fonction qui renverra les noms concernés.
+
+export const max7CharsHens = (hens) => {} // TODO
+
+// 7.6
+// Un client très spécifique cherche une poule qui correspond à ses critères : une poule au plumage rouge âgée de plus de 15 ans.
+// Ecrire une fonction qui renverra la première poule correspondant à ces critères.
+
+export const specificHen = (hens) => {} // TODO
