@@ -1,24 +1,24 @@
 'use strict'
 
 import {
-    ex1,
-    ex2,
-    ex3,
-    scope,
-    transformNumber,
-    makeSomethingOutOfNumber,
-    generateArticleWithSignature,
-    finalArticle,
-    generateHen,
-    hensOnlyNameAndAge,
-    mutatedHens,
-    averageAgeForHens,
-    max7CharsHens,
-    specificHen
-} from '../src/td01'
+  ex1,
+  ex2,
+  ex3,
+  scope,
+  transformNumber,
+  makeSomethingOutOfNumber,
+  generateArticleWithSignature,
+  finalArticle,
+  generateHen,
+  hensOnlyNameAndAge,
+  mutatedHens,
+  averageAgeForHens,
+  max7CharsHens,
+  specificHen
+} from '../src/td1/td01'
 
 import chai from 'chai'
-import hens from '../src/hens.js'
+import hens from '../src/td1/hens.js'
 chai.expect()
 const expect = chai.expect
 
