@@ -23,9 +23,16 @@
   },
 
   "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
 
   "plugins": [
-    "fp"
+    "fp",
+    "react",
+    "import"
   ],
 
   "rules": {
@@ -33,13 +40,14 @@
     "no-const-assign": "warn",
     "no-undef": "warn",
     "no-unreachable": "warn",
-    "no-unused-vars": "warn",
     "no-trailing-spaces": "warn",
     "eol-last": "warn",
     "quotes": "warn",
     "valid-typeof": "warn",
     "fp/no-unused-expression": "off",
-    "fp/no-nil": "off"
+    "fp/no-nil": "off",
+    "no-unused-vars": [2, { "varsIgnorePattern": "h" }],
+    "react/jsx-uses-vars": "warn"
   },
 
   "extends": ["standard", "plugin:fp/recommended"]

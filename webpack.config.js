@@ -2,12 +2,13 @@ const webpack = require('webpack')
 const path = require('path')
 const pkg = require('./package.json')
 
-let libraryName = pkg.name
+const libraryName = pkg.name
 
-let plugins = []
-let outputFile
+const plugins = [
+  new webpack.optimize.ModuleConcatenationPlugin()
+]
 
-outputFile = libraryName + '.js'
+const outputFile = libraryName + '.js'
 
 const config = {
   entry: path.resolve(__dirname, './src/index.js'),
@@ -17,27 +18,27 @@ const config = {
     filename: outputFile,
     library: libraryName,
     libraryTarget: 'umd',
-    umdNamedDefine: true,
+    umdNamedDefine: true
   },
   module: {
     rules: [
       {
         test: /(\.jsx|\.js)$/,
         loader: 'babel-loader',
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules|bower_components)/
       },
       {
         test: /(\.jsx|\.js)$/,
         loader: 'eslint-loader',
-        exclude: /node_modules/,
-      },
-    ],
+        exclude: /node_modules/
+      }
+    ]
   },
   resolve: {
     modules: [path.resolve('./node_modules'), path.resolve('./src')],
-    extensions: ['.json', '.js'],
+    extensions: ['.json', '.js']
   },
-  plugins: plugins,
+  plugins: plugins
 }
 
 module.exports = config
