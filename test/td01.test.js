@@ -15,7 +15,7 @@ import {
   averageAgeForHens,
   max7CharsHens,
   specificHen
-} from '../src/td1/td01'
+} from '../src/td01/td01_correction'
 
 import chai from 'chai'
 import hens from '../src/td01/hens.js'
@@ -50,7 +50,7 @@ test('exercice 5', () => {
 test('exercice 6', () => {
   expect(generateArticleWithSignature).to.be.a('function')
   expect(generateArticleWithSignature.length).to.eq(3)
-  expect(finalArticle).to.match(/enfin régénérés/)
+  expect(finalArticle).to.match(/acquisition de la connaissance/)
 
   const hasSig = /Pickle/.test(finalArticle) ||
     /Jean-Michel/.test(finalArticle) ||

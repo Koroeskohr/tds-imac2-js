@@ -1,4 +1,4 @@
-export const hens = [
+export default [
   {
     'name': 'Roberte',
     'species': 'hen',
