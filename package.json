@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "webpack-dev-server --host 0.0.0.0 --public localhost:3333",
+    "start": "webpack-dev-server",
     "test": "mocha -b --require babel-register --colors -w"
   },
   "repository": {
