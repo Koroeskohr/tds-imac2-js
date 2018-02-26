@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "test": "./run_td.sh"
+    "test": "mocha -b --require babel-register --colors -w"
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/Koroeskohr/td-js-imac"
+    "url": "https://gitlab.com/Koroeskohr/tds-js-imac2"
   },
   "keywords": [
     "fetch",
@@ -16,9 +16,9 @@
   "author": "Victor Viale",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/Koroeskohr/td-js-imac/issues"
+    "url": "https://gitlab.com/Koroeskohr/td-sjs-imac2/issues"
   },
-  "homepage": "https://gitlab.com/Koroeskohr/td-js-imac",
+  "homepage": "https://gitlab.com/Koroeskohr/tds-js-imac2",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta",
     "@babel/core": "^7.0.0-beta",

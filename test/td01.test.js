@@ -18,7 +18,7 @@ import {
 } from '../src/td1/td01'
 
 import chai from 'chai'
-import hens from '../src/td1/hens.js'
+import hens from '../src/td01/hens.js'
 chai.expect()
 const expect = chai.expect
 
