@@ -18,7 +18,7 @@ const expect = chai.expect
 const test = it
 
 test('exercice 1', () => {
-  expect(every(x => x > 0 && x < 5), [1, 2, 3, 4]).to.eq(true)
+  expect(every(x => x > 0 && x < 5, [1, 2, 3, 4])).to.eq(true)
 })
 
 describe('exercice 2', () => {
