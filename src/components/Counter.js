@@ -1,5 +1,5 @@
-import { h } from 'hyperapp';
-import Description from './Description';
+import { h } from 'hyperapp'
+import Description from './Description'
 
 /**
  * first object in the store is 'state' (an object - {})
@@ -26,4 +26,4 @@ export default ({ num }, { add, sub }) =>
         +
       </button>
     </section>
-  </div>;
+  </div>
