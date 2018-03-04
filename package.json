@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "webpack-dev-server",
-    "test": "mocha -b --require babel-register --colors -w"
+    "start": "webpack-dev-server --port 3000",
+    "test": "mocha --require babel-register --colors -w"
   },
   "repository": {
     "type": "git",
@@ -53,6 +53,7 @@
     "yargs": "^10.0.3"
   },
   "dependencies": {
+    "@hyperapp/logger": "^0.4.1",
     "hyperapp": "^1.1.2",
     "ramda": "^0.25.0"
   }

@@ -1,7 +1,6 @@
 import { h } from 'hyperapp'
 
-export default () =>
+export default (props) =>
   h('div', null, [
-    h('h1', null, 'hyperapp'),
-    h('p', null, 'with webpack')
+    h('h1', null, 'Hi, ' + props.name)
   ])
