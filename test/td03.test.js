@@ -5,6 +5,12 @@ import { toStructure } from './hyperappTestHelpers'
 
 import ExerciseOneView from '../src/ex1/components/views/ExerciseOneView'
 import ExerciseTwoView from '../src/ex2/components/views/ExerciseTwoView'
+import ExerciseThreeView from '../src/ex3/components/views/ExerciseThreeView'
+
+import stateTwo from '../src/ex2/state'
+import stateThree from '../src/ex3/state'
+
+import actionsThree from '../src/ex3/actions'
 
 chai.expect()
 const expect = chai.expect
@@ -30,14 +36,20 @@ test('ex1', () => {
 })
 
 test('ex2', () => {
-  const state = {
-    name: 'Andy Dufresne',
-    job: 'Banker',
-    gotLifeSentence: true
-  }
+  expect(toStructure(ExerciseTwoView(stateTwo))).to.match(/^main\(h1\(\$\),h2\(\$\),p\(.*\)/, 'Invalid HTML structure')
+  expect(ExerciseTwoView(stateTwo).children[0].children[0]).to.match(/Andy Dufresne/)
+  expect(ExerciseTwoView(stateTwo).children[1].children[0]).to.match(/Banker/)
+  expect(ExerciseTwoView(stateTwo).children[2].children[1]).to.match(/yes/)
+})
 
-  expect(toStructure(ExerciseTwoView(state))).to.match(/^main\(h1\(\$\),h2\(\$\),p\(.*\)/, 'Invalid HTML structure')
-  expect(ExerciseTwoView(state).children[0].children[0]).to.match(/Andy Dufresne/)
-  expect(ExerciseTwoView(state).children[1].children[0]).to.match(/Banker/)
-  expect(ExerciseTwoView(state).children[2].children[1]).to.match(/yes/)
+test('ex3', () => {
+  const node = ExerciseThreeView(stateThree, actionsThree)
+  expect(toStructure(node)).to.eq('main(p($),button($),button($))')
+  expect(stateThree.fishSize).to.eq(1)
+  expect(actionsThree.increaseFishSize()(stateThree)).to.deep.eq({
+    fishSize: 2
+  })
+  expect(actionsThree.decreaseFishSize()(stateThree)).to.deep.eq({
+    fishSize: 0
+  })
 })
