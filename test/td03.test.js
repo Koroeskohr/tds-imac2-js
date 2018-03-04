@@ -12,6 +12,9 @@ import stateThree from '../src/ex3/state'
 
 import actionsThree from '../src/ex3/actions'
 
+import IdCard from '../src/ex4/components/IdCard'
+import IdCardEntry from '../src/ex4/components/IdCardEntry'
+
 chai.expect()
 const expect = chai.expect
 
@@ -52,4 +55,11 @@ test('ex3', () => {
   expect(actionsThree.decreaseFishSize()(stateThree)).to.deep.eq({
     fishSize: 0
   })
+})
+
+test('ex4', () => {
+  const entry = IdCardEntry({key: 'key', value: 'value'})
+  expect(toStructure(entry)).to.eq('p($,$,$)')
+  const card = IdCard({picture: 'truc.jpg', listEntries: {pif: 'paf'}})
+  expect(toStructure(card)).to.match(/div\(img,((p,?)+)\)/)
 })
