@@ -3,7 +3,7 @@ import Description from '../src/components/Description'
 import {h} from 'hyperapp'
 import { toStructure } from './hyperappTestHelpers'
 
-import Home from '../src/ex1/components/views/Home'
+import ExerciseOne from '../src/ex1/components/views/ExerciseOneView'
 
 chai.expect()
 const expect = chai.expect
@@ -25,5 +25,9 @@ describe('tools', () => {
 })
 
 test('ex1', () => {
-  expect(toStructure(Home())).to.eq('main(header($),section(p($),p($,em($))))')
+  expect(toStructure(ExerciseOne())).to.eq('main(header($),section(p($),p($,em($))))')
+})
+
+test('ex2', () => {
+  expect(toStructure)
 })
