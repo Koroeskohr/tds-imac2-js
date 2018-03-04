@@ -1,15 +1,22 @@
 const webpack = require('webpack')
 const path = require('path')
 const pkg = require('./package.json')
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const libraryName = pkg.name
 
 const plugins = [
-  new webpack.optimize.ModuleConcatenationPlugin()
+  new ExtractTextPlugin({
+    filename: './bundle.css',
+    allChunks: true
+  }),
+  new webpack.optimize.ModuleConcatenationPlugin(),
 ]
 
 const config = {
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: [
+    path.resolve(__dirname, './src/index.js'),
+    path.resolve(__dirname, './styles/app.css')
+  ],
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, './lib'),
@@ -29,6 +36,12 @@ const config = {
         test: /(\.jsx|\.js)$/,
         loader: 'eslint-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: 'css-loader?importLoaders=1'
+        })
       }
     ]
   },

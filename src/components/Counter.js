@@ -8,22 +8,11 @@ import Description from './Description'
  * 'num' from 'state' and 'add'/'sub' from 'actions'
  */
 export default ({ num }, { add, sub }) =>
-  <div class="counter">
-    <Description />
-    <section>
-      <button
-        class="sub"
-        onclick={sub}
-        disabled={num < 1}
-      >
-        -
-      </button>
-      <h1 class="count">{num}</h1>
-      <button
-        class="add"
-        onclick={add}
-      >
-        +
-      </button>
-    </section>
-  </div>
+  h('div', {class: 'counter'}, [
+    Description(),
+    h('section', {}, [
+      h('button', {class: 'sub', onclick: sub, disabled: num < 1}, '-'),
+      h('h1', {class: 'count'}, num),
+      h('button', {class: 'add', onclick: add}, '+')
+    ])
+  ])

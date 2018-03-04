@@ -1,8 +1,7 @@
 import { h } from 'hyperapp'
 
 export default () =>
-  <div>
-    <h1>hyperapp-one</h1>
-    <p><em>With JSX and Webpack</em></p>
-    <hr />
-  </div>
+  h('div', null, [
+    h('h1', null, 'hyperapp'),
+    h('p', null, 'with webpack')
+  ])
