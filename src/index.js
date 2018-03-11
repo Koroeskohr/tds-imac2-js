@@ -3,7 +3,7 @@ import { app } from 'hyperapp'
 
 import actions from './exercise/actions'
 import state from './exercise/state'
-import view from './exercice/components/views/CoursesOverview'
+import view from './exercise/components/views/CoursesOverview'
 
 /*
 RAPPEL :
