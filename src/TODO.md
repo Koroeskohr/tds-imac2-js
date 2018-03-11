@@ -1,108 +1,83 @@
-# TD3 : what to do
+# TD4
 
-## Intro
+Ce TD sera à m'envoyer par mail à viale.victor@gmail.com
 
-1. Lancer l'appli (voir README.md) et jouer un peu avec 
-2. Explorer un peu la structure du dossier en omettant les dossiers 'ex*'
-  - Commencer par index.js et bien lire.
-  - Regarder les components, c'est très proche de ce qu'on a fait au dernier TD
-  - Regarder le state
-  - Regarder les actions
-2. Faire les exercices dans leurs dossiers respectifs.
+Pour cet exercice, vous ne serez pas guidés par des tests pour la simple raison que vous allez tout créer de zéro. Je serai présent pour répondre à vos questions (encore une fois n'hésitez pas) tout le long du TD.
 
-## Exercices
+On vous demande de créer une page Web pour mettre en avant la liste des professeurs à l'IMAC, ainsi que les matières qui seront enseignées pendant les trois années de la formation.
 
-### Exercice 1
+Vous construirez une page qui aura la structure décrite ci-dessous, qui dépendra d'un state que vous créerez vous-même. On ne demandera pas d'interactivité sur cette page.
 
-Vous construirez une view avec la fonction `h` de hyperapp (cf exemple dans le dossier `src`) qui aura la forme suivante : 
+L'objectif de ce TD est de vous faire réfléchir sur la sémantique qui se cache derrière une page Web, chose que vous avez déjà à peu près manipulée dans les TD précédents, et par le passé lorsque vous faisiez du code HTML et que vous choisissiez les bonnes balises.
 
-```html
-  <main>
-    <header class="ex1__header">
-      Trying hyperapp
-    </header>
-    <section>
-      <p>Hi !</p>
-      <p>Hyperapp is a JS micro framework intended to be <em>as barebones as possible.</em></p>
-    </section>
-  </main>
-```
+Pour ceux qui sont familiers avec la syntaxe JSX, elle est normalement activée sur ce TD et pour tous les suivants.
 
-### Exercice 2
-
-Il va à présent falloir utiliser le global state. Son but est de fournir les infos dynamiques à l'application, qui elle, à travers les interactions de l'utilisateur, le modifiera.
-
-Pour l'instant, on se concentrera sur le fait d'utiliser des morceaux du state, qui est finalement juste un gros objet (donc des données exploitables sous forme d'arbre).
-
-Le state contient trois clés : `name`, `job` et `gotLifeSentence` (<3 si vous avez la ref).
-
-Le but est d'afficher ces infos sous la forme d'un arbre HTML comme celui-ci. Ce qu'il y a entre les accolades c'est à vous de gérer la logique, mais les infos sont disponibles depuis l'état global.
-```html
-<main>
-  <h1>{name}</h1>
-  <h2>{job}</h2>
-  <p>Got a life sentence : {if gotLifeSentence then yes else no}</p>
-</main>
-```
-
-### Exercice 3
-
-C'est bien de servir du contenu "dynamique" depuis le state, mais c'est mieux si ce contenu dynamique peut effectivement changer. Nous allons créer une petite application dont le but est de créer un poisson en ASCII de longueur variable. Pour une longueur de 4, on aura ce poisson :
-```
-><====°>
-```
-avec deux boutons, un pour incrémenter ce nombre, et l'autre pour le décrémenter.
-
-L'intérêt d'utiliser des petits composants comme ça, c'est la capacité à pouvoir y associer de la logique qui n'est pas globale, et directement attacher des fonctions javascript à notre markup.
-
-Il est de base possible de définir l'attribut `onclick` sur une balise, mais c'est très déconseillé. Là on a le droit parce qu'on fait ça comme des grands. C'est maitrisé car chaque élément possède un cycle de vie précis et qu'on est capable de maitriser ce qui est affiché ou non.
-
-L'app aura ce format : 
-```html
-<main>
-  <p>><=====°></p>
-  <button>-</button>
-  <button>+</button>
-</main>
-```
-
-### Exercice 4
-
-L'intérêt du framework JS c'est la réutilisabilité des composants que l'on crée. Un composant est simplement une fonction, qui prend des arguments ou non, et qui renvoie un ou plusieurs noeuds DOM.
-
-Dans l'exemple, vous avez un composant `Description`, qui est utilisé, qui lui, sert simplement du contenu statique.
-Mais vous pouvez également passer un objet à ce composant, cette fonction. Cet objet est communément appelé les **props**
-de ce composant (pour *properties*)
-
-Vous allez construire une vue avec la carte d'identité d'un personnage. Vous devrez donc créer un composant pour créer une carte d'identité, et un composant pour afficher un élément de liste, pour afficher un label et sa valeur :
+## Description de la structure de la page
 
 ```
-Yeux : bruns
-Cheveux : bleus
++----------------------------------------------+
+|
+|                    Header
+|
++----------------------------------------------+
+|             Liste des professeurs
++----------------------------------------------+
+|
+|
+|              Liste des matières
+|
+|
++----------------------------------------------+
 ```
 
-L'objet à utiliser **se trouve dans le state**.
+Une entrée pour les professeurs ressemblera à la structure décrite dessous, la liste des professeurs sera juste une multitude de ces structures
 
-Je représente ici les components comme des balises HTML, pour l'instant vous utilisez encore la fonction `h` mais on verra
-rapidement qu'il y a moyen de rendre ça plus lisible en utilisant une syntaxe similaire.
-
-Vue :
-```html
-<main>
-  <IdCard picture="url" listEntries={{'Yeux': 'bruns', 'Cheveux': 'bleus'}} />
-</main>
+```
++----------------------------------------------+
+| Photo
+| Nom - Prénom
+| Matière
++----------------------------------------------+
 ```
 
-IdCard : 
-```html
-<div>
-  <img src="url" />
-  
-  <!-- n fois --> <IdCardEntry key='Yeux' value='bruns' />
-</div>
+La liste des matières ressemblera à ça : 
+
+```
++----------------------------------------------+
+| Catégorie 1
+|   Matière 1
+|   Matière 2...
+| Catégorie 2
+|   Matière 1
+|   Matière 2...
+| ...
++----------------------------------------------+
 ```
 
-IdCardEntry :
-```html
-<p>{clé} : {valeur}</p>
+Une entrée de matière sera construite de la sorte :
+
 ```
++----------------------------------------------+
+| Titre
+| Quantité d'heures
+| Années dans lesquelles c'est enseigné
+| Description
+| Nom du professeur
++----------------------------------------------+
+```
+
+La subtilité ici est que **je ne souhaite pas voir dupliquée les informations sur les professeurs**. Vous les identifierez par un identifiant unique dans les objets associées, que vous mettrez dans les définitions de vos matières.
+
+## Point particulier sur le rendu de listes
+
+Vous l'avez compris, vous allez dessiner beaucoup de listes durant cet exercice. Il y a un point important à mettre en avant ici. L'algorithme qui vérifie si votre page doit changer a besoin d'un coup de main de votre part pour accélérer le rendu de structures itératives pour éviter de re-render des choses qui n'ont pas changé. Pour cela, lorsque vous ajoutez une liste d'enfants à un noeud, vous devrez ajouter à chaque élément rendu par cette liste une clé particulière dans l'objet des `attributes`, qui se dénomme `key`. Elle doit être unique et être une chaîne de caractères, c'est la seule contrainte que l'on a sur cette clé. Idéalement, elle découlera de votre état. Si vous avez un tableau d'objets et que ces objets contiennent eux-mêmes un id, c'est le candidat parfait pour remplir ce rôle.
+
+## Conseils
+
+Il est très très TRES très important que la plus grande majorité de vos données soient traitées, transformées le plus haut possible dans votre arborescence de components, et que vos components enfants attendent comme `props` autant que possible une donnée directement prête à être utilisée.
+
+Pour rappel, les `props` correspondent à l'objet que l'on passe en paramètre de la fonction qui crée le component.
+
+Ceci permet d'éviter d'avoir de la logique qui modifie le comportement de votre application éparpillée partout dans votre code.
+
+En ce qui concerne la nomenclature de vos components, essayez de réfléchir en terme d'arborescence. Dans le TD précédent, vous avez créé des `IdCard`, des `IdCardEntry`. Respectez le sens des mots que vous utilisez pour décrire vos components.

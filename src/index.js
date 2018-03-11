@@ -1,11 +1,13 @@
 import { app } from 'hyperapp'
 // import logger from '@hyperapp/logger'
 
-import exampleActions from './actions'
-import exampleState from './state'
-import exampleView from './components/views/Counter'
+import actions from './exercise/actions'
+import state from './exercise/state'
+import view from './exercice/components/views/CoursesOverview'
 
 /*
+RAPPEL :
+
 La fonction app est la fonction qui sert à dessiner l'application javascript sur le navigateur
 et à la rendre interactive.
 
@@ -23,14 +25,9 @@ Une application hyperapp prend 4 paramètres:
    une application Hyperapp dans une sous-partie d'une page web.
  */
 
-/**
- * Vous modifierez cette fonction pour afficher les résultats de vos applications.
- * Il faudra linker le bon state, les bonnes actions et la bonne view. Je vous conseille vivement de nommer
- * vos imports en conséquence pour savoir ce que vous utilisez pour render l'app.
- */
 app(
-  exampleState,
-  exampleActions,
-  exampleView,
+  state,
+  actions,
+  view,
   document.body
 )
