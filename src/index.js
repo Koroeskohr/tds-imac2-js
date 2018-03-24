@@ -1,9 +1,9 @@
 import { app } from 'hyperapp'
 // import logger from '@hyperapp/logger'
 
-import actions from './exercise/actions'
-import state from './exercise/state'
-import view from './exercise/components/views/CoursesOverview'
+import actions from './actions'
+import state from './state'
+import view from './components/views/UseOfInputActions'
 
 /*
 RAPPEL :
