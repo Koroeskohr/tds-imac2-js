@@ -3,7 +3,7 @@
 - Installez Node.js (svp soyez pas sur Windows si vous pouvez)
 - `npm install`
 - `npm run start`
-- `npm run test`
+- `npm run server`
 
 L'appli devrait tourner sur le port 3000. Les logs de `npm run start` devrait vous dire si c'est le cas ou non.
 
