@@ -15,7 +15,7 @@ import {
   averageAgeForHens,
   max7CharsHens,
   specificHen
-} from '../src/td01/td01_correction'
+} from '../src/td01/td01'
 
 import chai from 'chai'
 import hens from '../src/td01/hens.js'
