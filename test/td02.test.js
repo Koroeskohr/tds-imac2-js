@@ -7,7 +7,7 @@ import {
   p,
   generateMarkupForDog,
   generateMarkupForAllDogs
-} from '../src/td02/td02_correction'
+} from '../src/td02/td02'
 
 import state from '../src/td02/state'
 
