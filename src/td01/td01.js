@@ -60,8 +60,9 @@ export function scope () {
  * Exercice 5
  * First-class functions, callbacks
  *
- * Crée une fonction qui appelle une fonction (transformNumber)
- * qui prendra number en premier paramètre pour l'incrémenter.
+ * Crée une fonction qui prend deux arguments, une fonction et un nombre,
+ * et qui appelle la fonction sur le nombre.
+ * Cette fonction sera une fonction d'incrémentation.
  */
 
 const number = 41
@@ -87,7 +88,7 @@ Selon des critères liés aux étapes d’acquisition de la connaissance, les de
 séquencés en grille, et enfin regénérés pour prendre vie et forme dans le nouveau bâtiment.`
 
 export const sig1 = (fullName) => `${fullName} l'immortel.le`
-export const sig2 = (fullName) => `Pickle ${fullName}`
+export const sig2 = (fullName) => fullName
 export const sig3 = (fullName) => `Jean-Michel ${fullName}`
 export const sig4 = (fullName) => `${fullName}, First of Her Name, the Unburnt, Queen of the Andals and the First Men, Khaleesi of the Great Grass Sea, Breaker of Chains, and Mother of Dragons`
 
@@ -161,3 +162,28 @@ export const max7CharsHens = (hens) => {} // TODO
 // Ecrire une fonction qui renverra la première poule correspondant à ces critères.
 
 export const specificHen = (hens) => {} // TODO
+
+// MORE ???
+// Ecrire une fonction permettant de fusionner un tableau d'objects en un seul object.
+// On peut accédér aux clés/valeurs d'un object avec une des méthodes du prototype de Object,
+// vous regarderez la spec sur le MDN.
+//
+// Ex : mergeObjects([{a: 1, b: 2}, {b: 3, c: 4}]) --> {a: 1, b: 3, c: 4}
+
+export const mergeObjects = (objects) => {} // TODO
+
+// Ecrire la fonction qui prendra deux tableaux et renverra leur union
+// (aka leur concatenation, sans les éléments en double)
+
+export const union = (arr1, arr2) => {} // TODO
+
+// Ecrire la fonction qui prendra un tableau de tableaux et renverra la version aplatie (un seul tableau avec tous les éléments)
+// /!\ Vous prendrez en compte les tableaux imbriqués
+
+export const flatten = (arr) => {} // TODO
+
+// Ecrire une fonction qui, pour un tableau et un élément, renvoie le tableau où l'on aura placé cet élément entre chaque
+// membre du tableau.
+// Ex : intercalate(",", ["a", "b", "c", "d"]) --> ["a", ",", "b", ",", "c", ",", "d"])
+
+export const intercalate = (el, arr) => {} // TODO

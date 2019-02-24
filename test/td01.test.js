@@ -14,7 +14,11 @@ import {
   mutatedHens,
   averageAgeForHens,
   max7CharsHens,
-  specificHen
+  specificHen,
+  mergeObjects,
+  union,
+  flatten,
+  intercalate
 } from '../src/td01/td01'
 
 import chai from 'chai'
@@ -114,4 +118,28 @@ test('exercice 7.6', () => {
     'age': 16,
     'furColor': 'red'
   })
+})
+
+test('merge objects', () => {
+  expect(mergeObjects).to.be.a('function')
+  expect(mergeObjects([{ a: 1, b: 2 }, { b: 3, c: 4 }])).to.eq({ a: 1, b: 3, c: 4 })
+})
+
+test('union of arrays', () => {
+  expect(union).to.be.a('function')
+  expect(union([1, 2], [3, 4])).to.deep.eq([1, 2, 3, 4])
+  expect(union([1, 2, 3], [3, 4])).to.deep.eq([1, 2, 3, 4])
+  expect(union([1, 2, 2], [2, 3, 4])).to.deep.eq([1, 2, 3, 4])
+})
+
+test('flatten array', () => {
+  expect(flatten).to.be.a('function')
+  expect(flatten([[1, 2], [3, 4]])).to.deep.eq([1, 2, 3, 4])
+  expect(flatten([[1, 2, [3, 4]], [3, 4]])).to.deep.eq([1, 2, 3, 4, 3, 4])
+})
+
+test('intercalate array', () => {
+  expect(intercalate).to.be.a('function')
+  expect(intercalate(',', ['a', 'b', 'c', 'd'])).to.deep.eq(['a', ',', 'b', ',', 'c', ',', 'd'])
+  expect(intercalate(',', [])).to.deep.eq([])
 })
