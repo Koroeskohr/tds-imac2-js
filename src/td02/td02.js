@@ -20,13 +20,13 @@ export const every = () => {} // TODO
  * contenant une image (<img>) et une légende (<figcaption>).
  *
  * Imaginons une interface minimaliste utilisable pour décrire une balise (tag) dans notre pseudo-DOM.
- * 
+ *
  * {
  *   name: 'div',
  *   children: [ tag1, 'texte', tag2 ], // optionnel
  *   attributes: {src: 'http://example.com/image.jpg'} // optionnel
  * }
- * 
+ *
  * Créons une première fonction utilitaire pour créer un tag, comme au TD précédent.
  */
 
@@ -46,7 +46,7 @@ export const createTag = (name, attributes, children) => ({
  * })
  *
  * Un raccourci syntaxique pour éviter la redondance est d'écrire les noms des variables
- * dans l'objet et ces noms deviendront les clés associées à leurs valeurs : 
+ * dans l'objet et ces noms deviendront les clés associées à leurs valeurs :
  * (name, attributes, children) => ({
  *   name,
  *   attributes
