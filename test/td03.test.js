@@ -27,11 +27,9 @@ test('examples', () => {
   expect(node).to.have.keys(['nodeName', 'attributes', 'children', 'key'])
 })
 
-describe('tools', () => {
-  test('toStructure', () => {
-    const node = Description({name: 'test'})
-    expect(toStructure(node)).to.eq('div(h1($))')
-  })
+test('toStructure', () => {
+  const node = Description({name: 'test'})
+  expect(toStructure(node)).to.eq('div(h1($))')
 })
 
 test('ex1', () => {
