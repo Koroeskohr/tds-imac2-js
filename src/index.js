@@ -1,6 +1,3 @@
- 
-// Amusez-vous ici
-
 import { app } from 'hyperapp'
 // import logger from '@hyperapp/logger'
 
