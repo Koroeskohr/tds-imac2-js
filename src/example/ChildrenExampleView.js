@@ -1,6 +1,6 @@
 import { h } from 'hyperapp'
 
-import NodeWithChildren from '../NodeWithChildren'
+import NodeWithChildren from './NodeWithChildren'
 
 export default (/* state, actions */) =>
   h('div', {}, [

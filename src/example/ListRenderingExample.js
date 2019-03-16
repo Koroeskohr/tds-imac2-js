@@ -8,7 +8,7 @@ export default (/* state, actions */) => {
     {id: 'bvp63d', color: 'red', height: 60}
   ]
 
-  return h('div', {}, list.map(
-    ({color, height, id}) => h('p', { key: id }, color + ' : ' + height))
+  return h('ul', {}, list.map(
+    ({color, height, id}) => h('li', { key: id }, color + ' : ' + height))
   )
 }
