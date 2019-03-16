@@ -1,7 +1,14 @@
 # TD4
 
-**Ce TD sera à m'envoyer par mail à viale.victor@gmail.com**
-Vous me le rendrez dans l'état que vous souhaitez, mais mon objectif c'est de corriger les éventuelles idées mal fondées que vous auriez sur tel ou tel point. Plus vous en ferez, plus je pourrai vous dire ce qu'il ne faut pas faire.
+**Ce TD sera à m'envoyer par mail à viale.victor+imac2@gmail.com**
+
+Pour ce TD, je dois vous avoir présenté les points suivants au préalable, si j'ai oublié dites le moi :D
+- différence views/components
+- nécessités des "keys" dans les listes
+- JSX
+- Babel
+
+Mon objectif c'est de corriger les éventuelles idées mal fondées que vous auriez sur tel ou tel point. Plus vous en ferez, plus je pourrai vous dire ce qu'il ne faut pas faire.
 
 Pour cet exercice, vous ne serez pas guidés par des tests pour la simple raison que vous allez tout créer de zéro, je souhaite vous voir pratiquer vos compétences de compréhension d'un problème, d'analyse du domaine de ce problème, et de création d'architecture qui puisse y répondre. Je serai présent pour répondre à vos questions (encore une fois n'hésitez pas) tout le long du TD.
 
@@ -67,7 +74,7 @@ Une entrée de matière sera construite de la sorte :
 +----------------------------------------------+
 ```
 
-La subtilité ici est que **je ne souhaite pas voir dupliquée les informations sur les professeurs**. Vous les identifierez par un identifiant unique dans les objets associées, que vous mettrez dans les définitions de vos matières.
+La subtilité ici est que **je ne souhaite pas voir dupliquée les informations sur les professeurs**. Vous les identifierez par un identifiant unique (un "id") dans les objets associées, que vous mettrez dans les définitions de vos matières.
 
 ## Point particulier sur le rendu de listes
 

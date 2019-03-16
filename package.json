@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "webpack-dev-server --port 3000",
-    "test": "mocha -b --require @babel/register --colors -w"
+    "start": "webpack-dev-server --port 3000"
   },
   "repository": {
     "type": "git",
