@@ -1,5 +1,5 @@
 
-export default 
+export default
 {
   teachers:
   [
@@ -24,7 +24,7 @@ export default
     {
       name: 'Ozlem Sulak ',
       subject: 'Language et compréhension du cinéma',
-      description: 'Fellini > Aya nakamura ', 
+      description: 'Fellini > Aya nakamura ',
       heures: '254 heures ',
       année: 2019,
       photo: 'https://avatarfiles.alphacoders.com/548/thumb-54824.jpg',
@@ -34,7 +34,7 @@ export default
       name: 'Miguel Martinez',
       subject: 'Mathématiques',
       heures: '254 heures ',
-      description: 'ça va ou pas', 
+      description: 'ça va ou pas',
       année: 2019,
       photo: 'https://avatarfiles.alphacoders.com/577/thumb-57778.png',
       categorie: 'science'

@@ -6,6 +6,7 @@ body {
   min-height: 100vh;
   margin: 0;
   font-size: calc(10px + 2vmin);
+    background-image: radial-gradient(circle at center, white, rgb(31, 184, 245));
 }
 
 p {

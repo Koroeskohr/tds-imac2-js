@@ -1,21 +1,24 @@
 import { h } from 'hyperapp'
+import TeachersPattern from '../TeachersPattern'
+import SubjectPattern from '../SubjectPattern'
 
-
-
-export default (state, actions) =>
-    h('main',{},
-        [
-            h('header', {}, {}),
-            
-            h('ul', {}, ['LISTE DES PROF', state.teachers.map(teacher =>
-                h('li', {},[
-                    h('img',{src: teacher.photo, style : 'float: left;'},{}),
-                       h('p',{style : 'font-size: 44px;'},teacher.name), h('p',{style : 'font-size: 12px;'},teacher.subject)])
-            ) ]),
-            
-            h('ul', {}, ['LISTE DES MATIERES', state.teachers.map(teacher =>
-                h('li', {}, [teacher.subject])
-            ) ]),
-        ]
-    )
-    
+export default (state) =>
+  h('main', {},
+    [
+      h('header', {}, {}),
+      h('h1', {style: "color : #B27000;"},'LISTE DES PROFS'),
+      h('ul', {}, state.teachers.map(teacher => TeachersPattern({...teacher}))
+       ),
+      h('h1', {style: "color : #B27000;"},'LISTE DES MATIÈRES'),
+      h('h2', {style: "color : #FFA000;"},'CATEGORIE ARTS : '),
+      h('ul', {}, (state.teachers.filter(teacher => teacher.categorie === "art")).map(subject => SubjectPattern({
+        ...subject,
+      })),
+      ),
+      h('h2', {style: "color : #FFA000;"},'CATEGORIE SCIENCES : '),
+      h('ul', {}, (state.teachers.filter(teacher => teacher.categorie === "science")).map(subject => SubjectPattern({
+        ...subject,
+      })),
+      ),
+    ]
+  )
