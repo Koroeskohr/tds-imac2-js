@@ -1,17 +1,14 @@
-
 import { app } from 'hyperapp'
 // import logger from '@hyperapp/logger'
 
-import actions from './actions'
-import state from './state'
-import view from './components/views/UseOfInputActions'
+import actions from './exercise/actions'
+import state from './exercise/state'
+import view from './exercise/components/views/CoursesOverview'
 
 /*
 RAPPEL :
-
 La fonction app est la fonction qui sert à dessiner l'application javascript sur le navigateur
 et à la rendre interactive.
-
 Une application hyperapp prend 4 paramètres:
 1. L'état global de l'application. Il correspond à une mémoire immédiate de tout ce qui se passe sur la page,
    stockée sous forme d'object **immutable**. Vous le définirez selon ce que vous essaierez d'accomplir. Il représente le domaine
