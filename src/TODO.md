@@ -1,4 +1,4 @@
-# TD6 : callbacks, Promises et code asynchrone
+# TD7 : callbacks, Promises et code asynchrone
 
 ## Intro : le passé
 
@@ -85,7 +85,7 @@ const myPromise = () => new Promise((resolve, reject) => {
 })
 ```
 
-Une Promise prend en paramètre **une fonction** qui prend deux arguments. Ces deux arguments sont des fonctions que l'on va pouvoir passer plus tard à la Promise pour effectuer des actions  
+Une Promise prend en paramètre **une fonction** qui prend deux arguments. Ces deux arguments sont des fonctions que l'on va pouvoir passer plus tard à la Promise pour effectuer des actions.
 
 Analysons la structure d'une Promise.
 
@@ -96,7 +96,7 @@ Cette fonction prend deux paramètres (cf exemple ci-dessus) :
 - une fonction qui s'appelle `resolve`, à appeler dans le cas où tout se passe correctement
 - une fonction qui s'appelle `reject`, à appeler dans le cas où une erreur survient
 
-Il vous incombe ensuite de les appeler avec les bons arguments dans le corps de la fonction afin de pouvoir appréhender leur puissance.
+Il vous incombe ensuite d'appeler ces deux fonctions avec les bons arguments dans la définition de votre Promise afin de pouvoir appréhender leur puissance.
 
 Une fois créée, la Promise s'exécute. Elle stockera dans sa structure le résultat de sa fonction, et le rendra accessible par son interface : les méthodes `then` et `catch`.
 

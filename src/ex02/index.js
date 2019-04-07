@@ -1,1 +1,1 @@
-export doAfterDelay = null
+export const doAfterDelay = null
