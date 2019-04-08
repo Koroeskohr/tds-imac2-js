@@ -1,9 +1,5 @@
-import { app } from 'hyperapp'
+import { app, h } from 'hyperapp'
 // import logger from '@hyperapp/logger'
-
-import actions from './actions'
-import state from './state'
-import view from './components/views/UseOfInputActions'
 
 /*
 RAPPEL :
@@ -26,8 +22,10 @@ Une application hyperapp prend 4 paramètres:
  */
 
 app(
-  state,
-  actions,
-  view,
+  {},
+  {},
+  () => <div> {
+    // Test code here (sorry)
+  }</div>,
   document.body
 )
