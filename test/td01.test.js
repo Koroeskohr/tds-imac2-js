@@ -33,7 +33,7 @@ test('exercice 1', () => {
 })
 
 test('exercice 2', () => (
-  expect(ex2).to.deep.eq(['dog', 'cat', 'faverjon', 'bird', 'lion', 'squirrel', 'bear', 'pig'])
+  expect(ex2).to.deep.eq(['dog', 'cat', 'axolotl', 'bird', 'lion', 'squirrel', 'bear', 'pig'])
 ))
 
 test('exercice 3', () => {
@@ -47,18 +47,18 @@ test('exercice 4', () => {
 
 test('exercice 5', () => {
   expect(makeSomethingOutOfNumber).to.be.a('function')
-  expect(makeSomethingOutOfNumber.length).to.eq(2)
+  expect(makeSomethingOutOfNumber).to.have.length(2)
   expect(makeSomethingOutOfNumber(transformNumber, 41)).to.eq(42)
 })
 
 test('exercice 6', () => {
   expect(generateArticleWithSignature).to.be.a('function')
-  expect(generateArticleWithSignature.length).to.eq(3)
+  expect(generateArticleWithSignature).to.have.length(3)
   expect(finalArticle).to.match(/acquisition de la connaissance/)
 
-  const hasSig = /Jean-Michel/.test(finalArticle) ||
+  const hasSig = /the Immortal/.test(finalArticle) ||
     /First of Her Name/.test(finalArticle) ||
-    /l'immortel/.test(finalArticle)
+    /Definitely not/.test(finalArticle)
   expect(hasSig).to.eq(true)
 })
 
