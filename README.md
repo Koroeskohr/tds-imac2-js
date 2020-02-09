@@ -1,7 +1,6 @@
 # TDs IMAC2
 ## Steps
-- Installez Node.js (svp soyez pas sur Windows si vous pouvez)
 - `npm install`
-- `npm run test test/tdxx.test.js` (xx étant le numéro du td)
+- `npm run test test/tdxx.test.js` (xx being the number of the session)
 
-Suivez les tests pour répondre aux questions
+Follow tests to answer the questions
