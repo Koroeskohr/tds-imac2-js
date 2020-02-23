@@ -73,7 +73,7 @@ export const makeSomethingOutOfNumber = null // TODO
 /**
  * Exercice 6
  * Gaetan manages the redaction of its annual magazine. He wants every author to choose between one in four available signatures.
- * Each one will include the author full name. 
+ * Each one will include the author full name.
  * Write a function that will take as its arguments the body of the article, one of those four signatures, and the name of the author
  * to generate the full signed article.
  */
@@ -88,10 +88,9 @@ Selon des critères liés aux étapes d’acquisition de la connaissance, les de
 séquencés en grille, et enfin regénérés pour prendre vie et forme dans le nouveau bâtiment.`
 
 export const sig1 = (fullName) => `${fullName} the Immortal`
-export const sig2 = (fullName) => fullName
-export const sig3 = (fullName) => `Definitely not ${fullName}`
+export const sig2 = (fullName) => `Definitely not ${fullName}`
 // Ok, dead memes
-export const sig4 = (fullName) => `${fullName}, First of Her Name, the Unburnt, Queen of the Andals and the First Men, Khaleesi of the Great Grass Sea, Breaker of Chains, and Mother of Dragons`
+export const sig3 = (fullName) => `${fullName}, First of Her Name, the Unburnt, Queen of the Andals and the First Men, Khaleesi of the Great Grass Sea, Breaker of Chains, and Mother of Dragons`
 
 export const generateArticleWithSignature = () => {} // TODO
 export const finalArticle = generateArticleWithSignature(/* ... */) // TODO
@@ -134,9 +133,9 @@ export const generateHen = () => {} // TODO
 /** 7.2
  * Hens have arrived! We'd like to have some kind of inventory to manage our fluffy friends.
  * We'll need key metrics to establish a backoffice
- * 
+ *
  * We want to write the function that will take the array of hens as a parameter
- * and will return an array of their names and ages 
+ * and will return an array of their names and ages
  */
 export const hensOnlyNameAndAge = (hens) => {} // TODO
 
