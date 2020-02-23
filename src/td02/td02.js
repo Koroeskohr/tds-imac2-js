@@ -2,19 +2,21 @@
 
 /**
  * Exercice 1
- * Ecrivez la fonction `every`, qui pour un prédicat et un tableau donné, vérifie
- * que tous les éléments du tableau vérifie ce prédicat. Elle renvoie true si c'est le cas,
- * false sinon. On utilisera une fonction vue dans le TD précédent
+ * As a warm-up and a quick refresher from last time, write the `every` function
+ * that will take a predicate and an array and return true if and only if the predicate
+ * is true for every member for the array. We'll use a function we studied last time
  */
 
 export const every = () => {} // TODO
 
 /**
- * Exercice 2
+ * Exercise 2
  *
- * On va construire une suite de fonctions qui, une fois composées, vont nous servir à atteindre un but bien précis.
- * On va essayer d'ancrer cet exercice dans un exemple concret, qui vous amènera vers une idée de l'utilisation de
- * frameworks front-end.
+ * We're going to build a few functions which, once composed with one another, will help us reach a very specific goal.
+ * Let's try and incorporate this exercise in a concrete example that will help us have a better understanding of
+ * how to use front-end frameworks.
+ * 
+ * 
  *
  * Nous allons construire, à partir de l'état global de notre application, une série de balises HTML <figure>,
  * contenant une image (<img>) et une légende (<figcaption>).
