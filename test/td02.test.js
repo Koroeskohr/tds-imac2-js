@@ -6,7 +6,9 @@ import {
   figcaption,
   p,
   generateMarkupForDog,
-  generateMarkupForAllDogs
+  generateMarkupForAllDogs,
+  errorMessage,
+  conditionallyDisplayDogs
 } from '../src/td02/td02'
 
 import state from '../src/td02/state'
@@ -82,4 +84,15 @@ test('exercice 2.2', () => {
 test('exercice 2.3', () => {
   const dogsMarkup = generateMarkupForAllDogs(state.dogs)
   expect(dogsMarkup.name).to.eq('div')
+})
+
+test('exercice 2.4', () => {
+  expect(
+    conditionallyDisplayDogs(true, state.dogs)).to.deep.eq(generateMarkupForAllDogs(state.dogs),
+    'User likes dogs, but their markup is not properly displayed!'
+  )
+  expect(
+    expect(conditionallyDisplayDogs(false, state.dogs)).to.deep.eq(errorMessage),
+    'User does not like dogs, but the error message is not shown!'
+  )
 })
