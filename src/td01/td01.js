@@ -28,7 +28,8 @@ export var ex2 = allTheAnimals
 
 /**
  * Exercice 3
- * Convert this to ES6 using **fat arrow functions**
+ * Convert this to ES6 using **arrow functions**, and try to refactor this piece of code.
+ * The tests will directly pass, they're here to ensure the result stays the same and you haven't made a mistake
  */
 
 function makeDogACat (thing) {
@@ -44,6 +45,7 @@ export var ex3 = makeDogACat
 /**
  * Exercice 4
  * What value does this return?
+ * The tests will directly pass, they're here to ensure the result stays the same and you haven't made a mistake
  */
 
 export function scope () {
@@ -140,7 +142,7 @@ export const generateHen = () => {} // TODO
 export const hensOnlyNameAndAge = (hens) => {} // TODO
 
 /** 7.3
- * We want to know if our hens are alright, and aren't suffering from genetic defects affecting their legs.
+ * We want to know if our hens are alright, and aren't suffering from genetic defects affecting their number of legs.
  * Write the function that will take the hens as parameter and will return the names of the affected hens.
  */
 export const mutatedHens = (hens) => {} // TODO
