@@ -1,14 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
 const pkg = require('./package.json')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const libraryName = pkg.name
 
 const plugins = [
-  new ExtractTextPlugin({
-    filename: './bundle.css',
-    allChunks: true
-  }),
+  new MiniCssExtractPlugin(),
   new webpack.optimize.ModuleConcatenationPlugin(),
 ]
 
@@ -39,9 +36,7 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          use: 'css-loader?importLoaders=1'
-        })
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
   },
