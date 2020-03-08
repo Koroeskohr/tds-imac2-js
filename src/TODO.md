@@ -3,7 +3,7 @@
 ## Intro
 
 1. Lancer l'appli (voir README.md) et jouer un peu avec 
-2. Explorer un peu la structure du dossier en omettant les dossiers 'ex*'
+2. Explorer un peu la structure du dossier `example`
   - Commencer par index.js et bien lire.
   - Regarder les components, c'est très proche de ce qu'on a fait au dernier TD
   - Regarder le state
@@ -14,7 +14,7 @@
 
 ### Exercice 1
 
-Vous construirez une view avec la fonction `h` de hyperapp (cf exemple dans le dossier `src`) qui aura la forme suivante : 
+Vous construirez une view avec la fonction `h` de hyperapp (cf exemple dans le dossier `example/src`) qui aura la forme suivante : 
 
 ```html
   <main>
@@ -30,13 +30,13 @@ Vous construirez une view avec la fonction `h` de hyperapp (cf exemple dans le d
 
 ### Exercice 2
 
-Il va à présent falloir utiliser le global state. Son but est de fournir les infos dynamiques à l'application, qui elle, à travers les interactions de l'utilisateur, le modifiera.
+Il va à présent falloir utiliser le global state. Son but est de fournir les infos dynamiques à l'application, qui elle, à travers les interactions de l'utilisateur, modifiera ce state.
 
 Pour l'instant, on se concentrera sur le fait d'utiliser des morceaux du state, qui est finalement juste un gros objet (donc des données exploitables sous forme d'arbre).
 
 Le state contient trois clés : `name`, `job` et `gotLifeSentence` (<3 si vous avez la ref).
 
-Le but est d'afficher ces infos sous la forme d'un arbre HTML comme celui-ci. Ce qu'il y a entre les accolades c'est à vous de gérer la logique, mais les infos sont disponibles depuis l'état global.
+Le but est d'afficher ces infos sous la forme d'un arbre HTML comme celui-ci. Ce qu'il y a entre les accolades c'est à vous de gérer la logique, c'est du pseudo-code, mais les infos sont disponibles depuis l'état global.
 ```html
 <main>
   <h1>{name}</h1>
