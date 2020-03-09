@@ -1,5 +1,5 @@
 import chai from 'chai'
-import Description from '../src/components/Description'
+import Description from '../src/example/components/Description'
 import {h} from 'hyperapp'
 import { toStructure } from './hyperappTestHelpers'
 
