@@ -27,7 +27,7 @@ export const every = () => {} // TODO
  *   attributes: {src: 'http://example.com/image.jpg'} // optional
  * }
  *
- * Let's build a first utility function to create a tag, just like the `genAnimal` from last time
+ * Let's start by building a utility function to create a tag, just like the `genAnimal` from last time
  */
 
 export const createTag = (name, attributes, children) => ({
@@ -66,12 +66,21 @@ export const img = () => {} // TODO
 export const p = () => {} // TODO
 
 /**
+ * Create a function which, for a given tag type, returns a function to create it:
+ */
+
+const tagCreator = (tagType) => { } // TODO
+
+export const div = tagCreator('div')
+// Example: const myDiv = div({ class: 'profile__root' }, [])
+
+/**
  * Exercise 2.2
  * In `./state.js`, we'll find the global state of our application at a given moment.
  * It contains a list of dogs and the info for the connected user that could be
  * the response to an API call.
  *
- * Let's write an even more specific function to generate the following HTML structure, that will display the dogs.
+ * Let's write an even more specific function to generate the following structure, that will display the dogs.
  * <figure>
  *   <img src={url_vers_la_photo} />
  *   <figcaption>

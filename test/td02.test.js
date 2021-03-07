@@ -8,7 +8,8 @@ import {
   generateMarkupForDog,
   generateMarkupForAllDogs,
   errorMessage,
-  conditionallyDisplayDogs
+  conditionallyDisplayDogs,
+  div
 } from '../src/td02/td02'
 
 import state from '../src/td02/state'
@@ -21,6 +22,7 @@ const test = it
 
 test('exercice 1', () => {
   expect(every(x => x > 0 && x < 5, [1, 2, 3, 4])).to.eq(true)
+  expect(every(x => x > 0 && x < 5, [1, 2, 3, 4, 5])).to.eq(false)
 })
 
 test('createTag', () => {
@@ -66,6 +68,18 @@ test('exercice 2.1 : p', () => {
     name: 'p',
     attributes: null,
     children: ['value']
+  })
+})
+
+test('exercice 2.1 : higher-order function', () => {
+  expect(div).to.be.a('function', 'div should be a function')
+  expect(div).to.have.length(2, 'div should have 2 arguments')
+  expect(div({ class: 'profile__root' }, [])).to.deep.eq({
+    name: 'div',
+    attributes: {
+      class: 'profile__root'
+    },
+    children: []
   })
 })
 
