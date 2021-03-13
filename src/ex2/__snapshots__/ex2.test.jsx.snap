@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Part 1 Structure is valid 1`] = `
+<div>
+  <div>
+    <h1>
+      Andy Dufresne
+    </h1>
+    <h2>
+      Banker
+    </h2>
+    <p>
+      35
+    </p>
+    <p>
+      Is in prison
+    </p>
+  </div>
+</div>
+`;
