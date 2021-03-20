@@ -1,66 +1,56 @@
-# TD3 : what to do
-## Exercices
+# TD4
 
-### Exercice 1
+## Ex 1: list rendering
 
-Vous transformerez le premier component de la forme `React.createElement` vers JSX, puis le second de JSX vers la forme `React.createElement`.
+Vous l'aurez vu dans le dernier exercice du TD3, render une liste de components est très utile et montre rapidement l'utilité de frameworks front-end: appliquer la même structure à un ensemble d'objets similaires revient à appeler `map` sur un tableau.
 
-### Exercice 2
-Un component n'a que peu d'intérêt s'il ne fait qu'afficher des informations statiques, et React semblerait bien trop complexe à utiliser pour ça, on préfèrerait encore garder un bon vieux fichier HTML.
+La structure avec laquelle on travaille (le virtual DOM) peut devenir très complexe rapidement, et son render dans la page Web peut rapidement ralentir et devenir désagréable pour l'utilisateur. Pour s'en sortir plus facilement lorsqu'on lui demande de render une liste de components, React nous demandera de lui donner un coup de main assez simple pour lui permettre d'identifier les éléments de la liste et ne pas la redessiner intégralement à chaque fois qu'une modification se passe dans un seul des éléments. Pour cela, on fournira un attribut `key` à chacun des components dans le tableau, une chaine de caractères dont l'unicité dans le tableau est garantie. Ex :
 
-Cependant, la force des components réside dans le fait qu'ils puissent prendre des paramètres pour être modifié. On les appelle les `props` (pour *properties*). 
+```js
+const arr = [
+  { name: 'John', age: 18, city: 'Paris' },
+  // ...
+]
 
-On souhaite représenter la fiche d'un personnage par un component que l'on appelera `Character`. On considèrera 5 caractéristiques de ce personnage. Ce component aura donc 5 paramètres : `name`, `age`, `job` , `imageUrl` et `isInPrison`.
-
-#### Partie 1
-Le but est d'afficher ces infos sous la structure suivante. On met toujours un component par fichier.
-
-```html
-<div>
-  <h1>the character's name</h1>
-  <h2>the character's job</h2>
-  <p>the character's age</p>
-  <p>"Is in prison" or "Is not in prison"</p>
-</div>
+const PeopleList = ({ people }) => (
+  <div>
+    {people.map(({ name, age, city }) => (
+      <p key={name}>{name}, {age} years old, lives in {city}</p>
+    ))}
+  </div>
+)
 ```
 
-#### Partie 2
+Des fois choisir une `key` n'est pas évidemment, ici on donne un nom qui existe peut-être plusieurs fois dans la liste. On peut imaginer concaténer le nom et la ville, ou simplement prétraiter notre tableau pour y ajouter un identifiant unique comme un UUID.
 
-Ajoutez d'autres personnages à la suite du premier en réutilisant le component que vous avez créé.
+Ce n'est pas un sujet simple, mais il faut le garder à l'esprit, et faire au mieux.
 
-### Exercice 3
+Vous utiliserez le tableau se trouvant dans `src/ex1-list-rendering/movies.json` pour afficher une liste de films qui devra au minimum contenir son titre, son résumé et ses acteurs. Plusieurs stratégies possibles pour trouver les `key`, soyez inventifs (ou recherchez sur internet)
 
-C'est bien d'avoir du contenu "dynamique", mais c'est mieux si ce contenu dynamique peut effectivement changer. Nous allons créer une petite application dont le but est de créer un poisson en ASCII de longueur variable. Pour une longueur de 4, on aura ce poisson :
-```
-><====°>
-```
-avec deux boutons, un pour incrémenter ce nombre, et l'autre pour le décrémenter.
+## Ex 2: user events
 
-L'intérêt d'utiliser des petits composants comme ça, c'est la capacité à pouvoir y associer de la logique qui n'est pas globale, et directement attacher des fonctions javascript à notre markup.
+Une autre composante majeure d'une application web est la réaction aux événements utilisateurs (user events). Clic sur un lien ou un bouton, un glisser-déposer, un texte rentré dans un input, une checkbox cochée, tout ceci est la base de l'interaction d'un utilisateur avec la page.
 
-Lorsque l'on écrit du HTML de manière plus classique, il est possible de définir l'attribut `onclick` sur une balise et y ajouter un morceau de code Javascript, mais c'est très déconseillé.
+React nous donne des outils pour attraper ces événements et les valeurs qui y sont associées: le texte contenu dans un champ texte, la position de la souris au clic, et bien d'autres.
 
-Ca devient maintenant la chose à faire, car on se trouve déjà dans du code Javascript, injecter des fonctions pour définir le comportement face à un certain événement devient pertinent.
+Vous pouvez en retrouver une liste complète ici : https://fr.reactjs.org/docs/events.html#reference
 
-On accomplira ça en utilisant l'attribut `onClick` sur nos éléments DOM (notez la majuscule).
+Vous devrez pour cet exercice intercepter les événements utilisateurs pour les balises présentes dans `ex2-events` et logger certaines valeurs dans la console :
+- pour la balise <input>
+  - le changement de texte log le nouveau texte
+  - le focus sur le champ log "Focus !"
+  - l'appui sur la touche Entrée dans le champ log "Envoyé !"
+- pour la balise <select>
+  - le changement de choix dans la liste log le nom de la valeur
+- pour la balise <button>
+  - le clic sur le bouton log "Clic"
 
-L'app aura ce format : 
-```html
-<main>
-  <p>><=====°></p>
-  <button>-</button>
-  <button>+</button>
-</main>
-```
+## Ex 3: state management
 
-Le poisson (la balise <p>) sera son propre component, que vous définirez dans Fish.js. Il aura un seul `prop`: `size`, correspondant au nombre de `=` dans son corps.
+Pour pouvoir propager des changements d'un component à l'autre, ou pour modifier ce qui s'affiche dynamiquement en fonction des user events, il est nécessaire de stocker l'information quelque part.
 
-### Exercice 4
+Pour cela, nous utiliserons un système assez particulier inventé pour React, qui s'appellent les `hooks`. React en propose une certaine quantité immédiatement, mais il est possible aussi d'écrire les notres et d'en récupérer par des bibliothèques tierces. Un hook, par convention s'appelera toujours `use[...]`, et dans notre cas ça sera `useState`. C'est une fonction exportée par `react`, vous devrez donc l'importer.
 
-L'intérêt du framework JS c'est la réutilisabilité des composants que l'on crée. Un composant est simplement une fonction, qui prend des arguments ou non, et qui renvoie un ou plusieurs noeuds DOM.
+Référez vous à la documentation de React pour l'utiliser : https://fr.reactjs.org/docs/hooks-reference.html#usestate
 
-Le but de cet exercice sera de vous faire trouver vos propres abstractions en components à partir d'une source de données assez conséquente.
-
-Le code prérempli dans l'exercice 4 fait un appel réseau pour télécharger un JSON rempli d'informations diverses sur des superhéros. La variable `superheroes` sera le tableau que l'appel réseau récupèrera. Ne vous inquiétez pas du fonctionnement de tout ça, on verra ça une autre fois.
-
-Analysez les objets que vous obtenez, et créez un component qui en prend un sous-ensemble qui vous intéresse. Vous afficherez ensuite une liste de ce composant dans votre page web.
+Le champ `input` pourra recevoir du texte, et lorsque vous appuierez sur Entrée, le texte contenu dans le champ viendra s'ajouter à votre state, qui sera donc une liste de chaine de caractères. Chacune des valeurs de votre state sera ensuite affiché dans la balise `ul` à l'intérieur d'une balise `li`.
