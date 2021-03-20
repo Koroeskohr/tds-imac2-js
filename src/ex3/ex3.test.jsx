@@ -7,7 +7,7 @@ import { testWithErrorMessage } from '../_testing';
 test('The page should contain a fish', () => {
   render(<ExerciseThreePage />);
   testWithErrorMessage(() => {
-    expect(screen.queryByText('°>')).not.toBeNull();
+    expect(screen.queryByText(/°>/)).not.toBeNull();
   }, 'No fish head °> found');
 });
 
@@ -17,6 +17,6 @@ test('Fish size', () => {
     expect(f.container.querySelector('p')).not.toBeNull();
   }, 'The fish component should contain a <p> tag');
   testWithErrorMessage(() => {
-    expect(screen.queryByText('><==°>')).not.toBeNull();
+    expect(screen.queryByText(/><==°>/)).not.toBeNull();
   }, 'A fish for size=2 should have been ><==°>');
 });
