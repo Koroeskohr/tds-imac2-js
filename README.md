@@ -48,8 +48,6 @@ L'app aura ce format :
 ```html
 <main>
   <p>><=====°></p>
-  <button>-</button>
-  <button>+</button>
 </main>
 ```
 
