@@ -23,7 +23,10 @@
       "react-app",
       "react-app/jest",
       "airbnb"
-    ]
+    ],
+    "rules": {
+      "react/prop-types": 0
+    }
   },
   "browserslist": {
     "production": [
