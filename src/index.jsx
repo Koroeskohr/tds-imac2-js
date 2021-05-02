@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+// import { ListRenderingExercise } from './ex1-list-rendering';
+// import { EventsExercise } from './ex2-events';
+import { StateManagementExercise } from './ex3-state-management';
 
 /*
 La fonction `ReactDOM.render` est la fonction qui sert à dessiner l'application
@@ -24,7 +27,7 @@ Une application React prend 2 paramètres:
  */
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StateManagementExercise />
   </React.StrictMode>,
   document.getElementById('root'),
 );
